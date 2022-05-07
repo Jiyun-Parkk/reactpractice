@@ -1,47 +1,23 @@
 import "./App.css";
 import React from "react";
+import Converter from "./converter";
 
 function App() {
-	const [amount, setAmount] = React.useState(0);
-	const [inverted, setinverted] = React.useState(false);
-	const onChange = (event) => {
-		setAmount(event.target.value);
-	};
-	const reset = () => {
-		setAmount(0);
-	};
-	const onFlip = () => {
-		reset();
-		setinverted((inverted) => !inverted);
+	const [index, setIndex] = React.useState("intro");
+	const onSelect = (e) => {
+		setIndex(e.target.value);
 	};
 	return (
 		<div>
-			<div>
-				<h1>Super Converter</h1>
-				<label htmlFor="minutes">Minutes</label>
-				<input
-					value={inverted ? amount * 60 : amount}
-					id="minutes"
-					placeholder="Minutes"
-					type="number"
-					onChange={onChange}
-					disabled={inverted}
-				/>
-				<h4>You want to convert {amount}</h4>
-			</div>
-			<div>
-				<label htmlFor="hours">Hours</label>
-				<input
-					value={inverted ? amount : Math.floor(amount / 60)}
-					id="hours"
-					placeholder="Hours"
-					type="number"
-					onChange={onChange}
-					disabled={!inverted}
-				/>
-			</div>
-			<button onClick={reset}>reset</button>
-			<button onClick={onFlip}>{inverted ? "Turn back" : "Invert"}</button>
+			<h1>Super Converter</h1>
+			<select value={index} onChange={onSelect}>
+				<option value="intro">Please select converter</option>
+				<option value="0">Minutes & Hours</option>
+				<option value="1">Miles & Kilometers</option>
+			</select>
+			<hr />
+
+			{index === "intro" ? null : <Converter idx={index} />}
 		</div>
 	);
 }

@@ -1,0 +1,29 @@
+.selector {
+	margin-left: 20px;
+	width: 150px;
+	height: 50px;
+}
+
+strong {
+	margin-left: 20px;
+}
+
+input {
+	width: 250px;
+	height: 50px;
+}
+
+.change {
+	margin-left: 20px;
+	width: 150px;
+	height: 50px;
+	border: 0;
+	background-color: rgb(238, 174, 163);
+	color: #fff;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.change:hover {
+	background-color: rgb(185, 92, 76);
+}

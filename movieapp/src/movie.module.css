@@ -1,0 +1,36 @@
+.info {
+	display: flex;
+}
+.textbox {
+	margin-left: 20px;
+}
+.textbox h3,
+.title {
+	font-size: 32px;
+}
+.textbox p,
+.textbox ul li {
+	font-size: 26px;
+}
+
+.moviebox {
+	margin-bottom: 30px;
+}
+.gohome {
+	display: inline-block;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: rgb(2, 37, 2);
+	margin: 20px 0 30px;
+	cursor: pointer;
+}
+.gohome:hover {
+	opacity: 0.5;
+}
+.link {
+	text-decoration: none;
+	color: #fff;
+	font-size: 25px;
+}

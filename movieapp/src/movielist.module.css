@@ -1,0 +1,38 @@
+.index {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	font-size: 20px;
+	border-radius: 50%;
+	margin-right: 20px;
+	background-color: #5f7161;
+}
+.list {
+	list-style: none;
+	display: flex;
+}
+.list p {
+	height: 50px;
+	line-height: 50px;
+	background-color: #6d8b74;
+}
+.list p:nth-child(2) {
+	width: 50px;
+	text-indent: 20px;
+}
+.list p:nth-child(2) {
+	width: 700px;
+	text-indent: 20px;
+	font-size: 22px;
+	cursor: pointer;
+}
+.list p:nth-child(2):hover {
+	background-color: #375f40;
+}
+.link {
+	text-decoration: none;
+	color: #fff;
+}

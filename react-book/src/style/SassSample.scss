@@ -1,0 +1,19 @@
+$red: red;
+$orange: orange;
+
+@mixin circle($size) {
+  $calculated: 32px * $size;
+  width: $calculated;
+  height: $calculated;
+  border-radius: 50%;
+}
+
+.box {
+  &.orange {
+    background-color: $orange;
+    @include circle(10);
+  }
+  :local &.red {
+    color: $red;
+  }
+}

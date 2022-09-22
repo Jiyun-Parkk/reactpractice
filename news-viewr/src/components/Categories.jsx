@@ -51,14 +51,16 @@ const Category = styled(NavLink)`
 
 const Categories = () => {
   const params = useParams()
-
   return (
     <CategoryBox>
-      {categories.map((list) => (
-        <Category to={`/${params.nation}/${list.name}`} key={list.name}>
-          {list.text}
-        </Category>
-      ))}
+      {categories.map((list) => {
+        const listText = params.nation === 'kr' ? list.text : list.name
+        return (
+          <Category to={`/${params.nation}/${list.name}`} key={list.name}>
+            {listText}
+          </Category>
+        )
+      })}
     </CategoryBox>
   )
 }

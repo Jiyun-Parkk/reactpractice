@@ -45,8 +45,8 @@ const Home = () => {
       <Title>News World</Title>
       <Wrapper>
         <NationBox>
-          <Nation to='/korea'>Korea</Nation>
-          <Nation to='/united-states'>United States</Nation>
+          <Nation to='/kr'>Korea</Nation>
+          <Nation to='/us'>United States</Nation>
         </NationBox>
       </Wrapper>
     </>

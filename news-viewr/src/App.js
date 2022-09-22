@@ -9,8 +9,6 @@ const App = () => {
     <>
       <GlobalStyle />
       <Routes>
-        {/*<Route path='/' element={<NewsPage />} />
-        <Route path='/:category' element={<NewsPage />} />*/}
         <Route path='/' element={<Home />} />
         <Route path='/:nation' element={<NewsPage />} />
         <Route path='/:nation/:category' element={<NewsPage />} />

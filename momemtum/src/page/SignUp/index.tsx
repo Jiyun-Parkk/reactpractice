@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { SignContainer } from 'layout'
 import { Input, Form, Title, Button } from 'components'
-
+import { useForm } from 'react-hook-form'
 export const SignUp = () => {
   const signForm = useRef<HTMLFormElement>(null)
   const handleFormSubmit = (e: React.FormEvent) => {

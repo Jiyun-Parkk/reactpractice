@@ -15,7 +15,6 @@ export const Login = () => {
   } = useForm()
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data)
     signInWithEmailAndPassword(auth, data.loginId, data.loginPw).then(() => {
       navigate('/')
       setValue('loginId', '')

@@ -31,5 +31,5 @@ export const Label = styled.label`
   padding: 10px;
   width: 100%;
   border-top-left-radius: 5px;
-  flex-basis: 20%;
+  flex-basis: 100px;
 `

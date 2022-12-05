@@ -1,13 +1,15 @@
 import { SignContainer } from 'layout'
 import { Input, Form, Title, Button } from 'components'
 import { useForm } from 'react-hook-form'
-import { auth } from 'firebase-config'
+import { auth, db } from 'firebase-config'
+import { collection, addDoc } from 'firebase/firestore'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router'
 
 interface ISignValue {
   id: string
   pw: string
+  nickname: string
 }
 export const SignUp = () => {
   const navigate = useNavigate()
@@ -20,11 +22,17 @@ export const SignUp = () => {
   } = useForm<ISignValue>()
   const onSubmit = handleSubmit((data) => {
     createUserWithEmailAndPassword(auth, data.id, data.pw)
-      .then(() => {
+      .then((res) => {
         console.log('등록성공!')
-        navigate('/')
+        //navigate('/')
         setValue('id', '')
         setValue('pw', '')
+        setValue('nickname', '')
+
+        addDoc(collection(db, 'users'), {
+          id: res.user.uid,
+          nick: data.nickname,
+        })
       })
       .catch((error) => {
         console.log(error.message)
@@ -60,6 +68,14 @@ export const SignUp = () => {
           })}
           labelName='PW'
           type='password'
+        />
+        <Input
+          name='nickname'
+          register={register('nickname', {
+            required: 'Required nickname',
+          })}
+          labelName='nickname'
+          type='text'
         />
         {/*{idError && idError.type === 'required'
           ? null
